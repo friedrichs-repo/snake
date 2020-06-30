@@ -98,6 +98,8 @@ int main(int argc, char *argv[])
             break;
     	}
     	if (headPos.equals(position_prey)){
+	    positions.insert(positions.end(),headPos);
+	    length++;
 	    bool preyUnderSnake = true;
 	    while (preyUnderSnake){
 	        position_prey.randomInBox(0, 0, size_x, size_y);
@@ -109,8 +111,6 @@ int main(int argc, char *argv[])
 		    }
 		}
 	    }
-	    positions.insert(positions.end(),headPos);
-	    length++;
     	}
     	else{
     	    for (int i = 0; i < length - 1; i++)
